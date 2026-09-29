@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - Student Assignment Dashboard</title>
+    <style>
+        /* Base Reset and Layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container Block Layout */
+        .dashboard-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            padding: 30px;
+        }
+
+        /* Block Header */
+        .dashboard-header {
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        /* Block Sections */
+        .section-block {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .section-block h2 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 5px;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #ffffff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0369a1;
+        }
+
+        /* Inline Custom Styling Elements */
+        .highlight-inline {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .status-inline {
+            background-color: #dcfce7;
+            color: #15803d;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* iframe container styling */
+        .iframe-container {
+            text-align: center;
+        }
+
+        iframe {
+            border: 2px solid #0284c7;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Block Level Container -->
+    <div class="dashboard-container">
+
+        <!-- Block Level Header -->
+        <div class="dashboard-header">
+            <h1>🎓 Student Educational Portal</h1>
+            <p>Assignment Submission & Virtual Campus Reference</p>
+        </div>
+
+        <!-- Section 1: Block vs Inline Display Demonstration -->
+        <div class="section-block">
+            <h2>📢 Submission Guidelines & Formatting Demo</h2>
+            <p style="margin-bottom: 10px;">
+                This full-width paragraph represents a <strong>block-level element</strong>. Below are inline highlights showing precise text control:
+            </p>
+            <p>
+                Status: <span class="status-inline">ACTIVE SUBMISSION</span> | 
+                Note: Make sure your files are <span class="highlight-inline">properly named</span> before uploading. 
+                Inline elements like <span style="background-color: #e0f2fe; color: #0369a1; font-weight: bold; padding: 2px 5px; border-radius: 3px;">&lt;span&gt;</span> 
+                take up only as much width as required without pushing content to new lines.
+            </p>
+        </div>
+
+        <!-- Section 2: External Frame Embedding -->
+        <div class="section-block">
+            <h2>🗺️ Virtual Campus Reference Map</h2>
+            <div class="iframe-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13269.071853683108!2d72.7844!3d33.7715!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa32e18eb9cd9%3A0x6b1399ee4d03e6fb!2sWah%20Cantt!5e0!3m2!1sen!2spk!4v1690000000000!5m2!1sen!2spk" 
+                    width="100%" 
+                    height="300" 
+                    style="border: 2px solid #0284c7;" 
+                    align="center"
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Section 3: Assignment Submission Form -->
+        <div class="section-block">
+            <h2>📤 Assignment Submission Form</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                
+                <!-- Instructions Multi-line Textarea -->
+                <div class="form-group">
+                    <label for="instructions">Submission Notes & Remarks:</label>
+                    <textarea id="instructions" name="instructions">Default Instructions: Please state any specific references or comments regarding your project here before submitting your file.</textarea>
+                </div>
+
+                <!-- Restricted File Input -->
+                <div class="form-group">
+                    <label for="assignment-file">Upload Assignment File (PDF, DOCX, ZIP only):</label>
+                    <input type="file" id="assignment-file" name="assignment_file" accept=".pdf, .docx, .zip" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Assignment</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
